@@ -1,5 +1,5 @@
 "use client";
-
+import  { ReactNode } from 'react';
 import { WagmiProvider, createConfig, http } from "wagmi";
 import { mainnet } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -26,7 +26,7 @@ const config = createConfig(
 
 const queryClient = new QueryClient();
 
-export const Web3Provider = ({ children }) => {
+export const Web3Provider = ({ children }: { children: ReactNode }) => {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
