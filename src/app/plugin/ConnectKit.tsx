@@ -1,6 +1,6 @@
 import { useAccount } from "wagmi";
 
-const MyComponent = () => {
+export const MyComponent = () => {
   const { address, isConnecting, isDisconnected } = useAccount();
   if (isConnecting) return <div>Connecting...</div>;
   if (isDisconnected) return <div>Disconnected</div>;
