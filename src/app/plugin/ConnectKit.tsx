@@ -1,8 +1,9 @@
+"use client";
 import { useAccount } from "wagmi";
 
-export const MyComponent = () => {
+export function useWalletStatus() {
   const { address, isConnecting, isDisconnected } = useAccount();
-  if (isConnecting) return <div>Connecting...</div>;
-  if (isDisconnected) return <div>Disconnected</div>;
-  return <div>Connected Wallet: {address}</div>;
-};
+  if (isConnecting) return "Connecting...";
+  if (isDisconnected) return "Disconnected";
+  return `Connected Wallet: ${address}`;
+}
